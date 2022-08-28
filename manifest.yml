@@ -1,0 +1,32 @@
+display_information:
+  name: SlackTestBot
+  description: An example app
+  background_color: "#da3a79"
+  long_description: An example app that can display actionable notifications in Slack. App contains all the necessary scopes to find a channel for publishing, and to publish a message. Enables Interactivity features to handle use of the interactive elements of the notification. Used with tutorials on api.slack.com/tutorials.
+features:
+  bot_user:
+    display_name: SlackTestBot
+    always_online: true
+oauth_config:
+  redirect_urls:
+    - https://<YOUR_DOMAIN>/slack/oauth_redirect
+    - https://<YOUR_DOMAIN>/slack/oauth/callback
+  scopes:
+    bot:
+      - channels:read
+      - chat:write
+      - chat:write.public
+      - app_mentions:read
+settings:
+  event_subscriptions:
+    request_url: https://<YOUR_DOMAIN>/slack/events
+    bot_events:
+      - app_mention
+      - grid_migration_finished
+      - grid_migration_started
+  interactivity:
+    is_enabled: true
+    request_url: https://example.com/slack/message_action
+  org_deploy_enabled: false
+  socket_mode_enabled: false
+  token_rotation_enabled: true
