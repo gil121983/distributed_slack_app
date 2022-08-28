@@ -15,7 +15,9 @@
 
 - Integrate the "Add to Slack" button (from Manage Distribution page in your app settings) into your application UI.
 
-- Change the button's href to pass customer id (or user id) `&{SLACK_APP_BASE_PATH}/slack/install?customer=${current_customer_id}`.
+- Change the button's href to pass customer id (or user id) on request's params
+
+        `&{SLACK_APP_BASE_PATH}/slack/install?customer=${current_customer_id}`.
 
 - Install the app to your workspace or test workspace.
 
