@@ -64,7 +64,9 @@ def slack_events():
 
 @flask_app.route("/slack/install", methods=["GET"])
 def install():
+    # customer_id should be sent from "Add to Slack" button
     session["customer"] = int(request.args.get("customer"))
+    # Replace jwt_token with your application JWT cookie name 
     session["jwt"] = request.cookies.get("jwt_token")
     return handler.handle(request)
 
